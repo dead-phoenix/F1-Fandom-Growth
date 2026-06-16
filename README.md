@@ -326,14 +326,6 @@ d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
 d3.json('countries-110m.json')
 ```
 
-**Regenerating data files:**  
-If you want to rebuild the JSON files from the original CSVs:
-```bash
-pip install pandas
-python3 prepare_data.py
-```
-Place the four cleaned CSVs (`yearly_interest.csv`, `interest_with_driver_perf.csv`, `media_events.csv`, `interest_with_champion.csv`) in the same directory as `prepare_data.py`.
-
 ---
 
 ## Repository structure
