@@ -43,41 +43,15 @@ As an F1 fan, I noticed the sport's popularity surge among people who'd never wa
 
 ---
 
-## Research questions
+## Research Questions
 
-Three questions guided the entire project — from data collection through exploration through the final visualisation:
+Three questions guided the entire project—from data collection and exploration through to the final visualisation:
 
-|
-#
-|
- Question 
-|
-|
----
-|
-----------
-|
-|
-**
-Q1
-**
-|
- How has global digital interest in Formula 1 evolved between 2015 and 2025? 
-|
-|
-**
-Q2
-**
-|
- To what extent does the national success of a driver or constructor drive regional fan engagement compared to general growth in non-traditional F1 markets? 
-|
-|
-**
-Q3
-**
-|
- How do major events — championship wins, Netflix Drive to Survive releases, and the 2025 F1 Movie — affect fan engagement? 
-|
+| ID | Question |
+|----|----------|
+| **Q1** | How has global digital interest in Formula 1 evolved between 2015 and 2025? |
+| **Q2** | To what extent does the national success of a driver or constructor drive regional fan engagement compared to general growth in non-traditional F1 markets? |
+| **Q3** | How do major events—championship wins, Netflix *Drive to Survive* releases, and the 2025 F1 Movie—affect fan engagement? |
 
 ---
 
@@ -125,93 +99,19 @@ new_series_rescaled = new_series * scale_factor
 
 Requests were spaced 1.5 seconds apart per country to avoid Google's rate limiting.
 
-### Other cleaning steps
+### Other Cleaning Steps
 
-|
- Issue 
-|
- Dataset 
-|
- Resolution 
-|
-|
--------
-|
----------
-|
-------------
-|
-|
- Race and schedule dates entirely missing for 2015–2017 (1,300+ nulls) 
-|
- race_results, schedule 
-|
- Filled from official F1 race calendar archives. Schedule cleaned first; race_results dates filled via left merge on Year + Round 
-|
-|
- Championship clinch dates null for 2015, 2016, 2017 
-|
- championship_clinch 
-|
- Filled from historical records: 2015-11-02 (Brazil), 2016-11-27 (Abu Dhabi), 2017-10-29 (Mexico) 
-|
-|
- 3 wildcard drivers (Magnussen 2015, Button 2017, di Resta 2017) had null Position 
-|
- driver_standings 
-|
- Sentinel value 99 added; is_wildcard flag created. Excluded from ranking analyses 
-|
-|
- Media event dates stored as DD-MM-YYYY strings 
-|
- media_events 
-|
- Parsed with 
-`pd.to_datetime(dayfirst=True)`
-. Season 8 (2026) flagged as outside_study_window 
-|
-|
- Force India constructor nationality listed as "Indian" 
-|
- constructor_standings 
-|
- Normalised to "British" — Force India was legally incorporated in the UK per FIA registration 
-|
-|
- peak_month column stored as float64 (e.g. 3.0) 
-|
- yearly_interest 
-|
- Cast to int; peak_month_name column added (3 → "Mar") 
-|
-|
- pandas NaN written as literal 
-`NaN`
- in JSON — invalid syntax that crashes the browser 
-|
- All JSON files 
-|
- Recursive 
-`clean()`
- function replaces any float NaN/Inf with Python None before 
-`json.dump`
-|
-|
- Singapore invisible on 110m world map (city-state, ~728 km²) 
-|
- Choropleth 
-|
- Manual D3 circle projected at correct coordinates (lat 1.35°, lon 103.82°) 
-|
-|
- Bump chart end-labels overlapping for similarly-ranked countries 
-|
- Bump chart 
-|
-`staggeredLabels()`
- function enforces minimum 14px vertical gap between adjacent labels 
-|
+| Issue | Dataset | Resolution |
+|--------|---------|------------|
+| Race and schedule dates entirely missing for 2015–2017 (1,300+ nulls) | race_results, schedule | Filled from official F1 race calendar archives. Schedule cleaned first; race results dates filled via left merge on Year + Round. |
+| Championship clinch dates null for 2015, 2016, 2017 | championship_clinch | Filled from historical records: 2015-11-02 (Brazil), 2016-11-27 (Abu Dhabi), 2017-10-29 (Mexico). |
+| 3 wildcard drivers (Magnussen 2015, Button 2017, di Resta 2017) had null Position | driver_standings | Sentinel value 99 added; `is_wildcard` flag created. Excluded from ranking analyses. |
+| Media event dates stored as DD-MM-YYYY strings | media_events | Parsed with `pd.to_datetime(dayfirst=True)`. Season 8 (2026) flagged as outside study window. |
+| Force India constructor nationality listed as "Indian" | constructor_standings | Normalised to "British" because Force India was legally incorporated in the UK per FIA registration. |
+| `peak_month` stored as float64 (e.g. 3.0) | yearly_interest | Cast to integer and `peak_month_name` added (3 → Mar). |
+| pandas NaN written as literal `NaN` in JSON | All JSON files | Recursive `clean()` function replaces NaN/Inf with Python `None` before `json.dump()`. |
+| Singapore invisible on 110m world map (~728 km²) | Choropleth | Manual D3 circle projected at correct coordinates. |
+| Bump chart labels overlapping | Bump chart | `staggeredLabels()` function enforces minimum 14px spacing. |
 
 ### Merged datasets produced
 
@@ -237,86 +137,24 @@ The initial data exploration was performed in Tableau Desktop. Ten visualisation
 
 **The 2025 crossover:** for the first time in the dataset, non-traditional markets (avg 34.2) overtook traditional markets (avg 26.1). Traditional markets fell 46% from peak; non-traditional fell only 21%.
 
-|
- Country 
-|
- Notable pattern 
-|
-|
----------
-|
-----------------
-|
-|
- UK 
-|
- Consistently high throughout (44.0–64.9) 
-|
-|
- India 
-|
- Persistent outlier, 55.1–122.6 on stitched scale 
-|
-|
- US 
-|
- Biggest absolute growth: 48.1 → 112.9 (+134.8%) 
-|
-|
- Netherlands 
-|
- Paradox: peaked 27.7 in 2022 (Verstappen's dominant year), then fell to 9.1 by 2025 
-|
-|
- China 
-|
- Near-zero throughout — Google is blocked in China; data reflects platform absence not F1 interest 
-|
+| Country | Notable Pattern |
+|----------|----------------|
+| UK | Consistently high throughout (44.0–64.9). |
+| India | Persistent outlier, 55.1–122.6 on stitched scale. |
+| US | Biggest absolute growth: 48.1 → 112.9 (+134.8%). |
+| Netherlands | Peaked at 27.7 in 2022 (Verstappen's dominant year), then fell to 9.1 by 2025. |
+| China | Near-zero throughout. Google is blocked in China; data reflects platform absence rather than F1 interest. |
 
 ### Q2 — Driver success and regional engagement
 
 **The relationship between driver performance and national interest is real but context-dependent.**
 
-|
- Country 
-|
- Finding 
-|
-|
----------
-|
----------
-|
-|
- 🇲🇽 Mexico 
-|
-**
-Strongest link.
-**
- Interest rose from 12.8 (2020) to 46.9 (2022) when Pérez joined Red Bull. Interest trend p = 0.005. 2021 YoY change: +26.98. Fell –38.64 in 2025 after his exit 
-|
-|
- 🇳🇱 Netherlands 
-|
-**
-Paradox.
-**
- Verstappen's position improved significantly (p = 0.011) but national interest stayed flat and declined (p = 0.640). Sustained dominance may reduce engagement 
-|
-|
- 🇬🇧 UK 
-|
- Consistently high, slight upward trend (p = 0.069). Biggest spike was 2021 — the 
-*
-closest
-*
- championship, not the one Hamilton won 
-|
-|
- 🇪🇸 Spain 
-|
- Irregular/event-driven. Spiked 2023–24 (Alonso + Sainz moments), collapsed in 2025 after Sainz left Ferrari 
-|
+| Country | Finding |
+|----------|---------|
+| 🇲🇽 Mexico | **Strongest link.** Interest rose from 12.8 (2020) to 46.9 (2022) when Pérez joined Red Bull. Interest trend p = 0.005. Fell −38.64 in 2025 after his exit. |
+| 🇳🇱 Netherlands | **Paradox.** Verstappen's position improved significantly (p = 0.011), but national interest stayed flat and declined (p = 0.640). Sustained dominance may reduce engagement. |
+| 🇬🇧 United Kingdom | Consistently high with a slight upward trend (p = 0.069). Biggest spike was 2021—the closest championship fight, not the one Hamilton won. |
+| 🇪🇸 Spain | Event-driven. Spiked in 2023–24 (Alonso and Sainz moments), then collapsed in 2025 after Sainz left Ferrari. |
 
 **Scatter plot (all focus countries):** avg interest = 1.69 × position + 21.63 · R² = 0.40 · p = 0.051. The positive slope is counterintuitive — countries with *worse* drivers tend to show higher interest — but this is driven by the US outlier (highest interest, no competitive driver).
 
@@ -362,31 +200,11 @@ Generated 12 chart type candidates, then filtered, categorised, and combined the
 **Map type:** Choropleth (blue→amber scale)  
 **Structure:** Single scrolling column. Charts animate in as user scrolls.
 
-|
- Section 
-|
- Charts 
-|
-|
----------
-|
---------
-|
-|
- Q1 
-|
- Choropleth map (syncs to scroll year) + annotated global trend line 
-|
-|
- Q2 
-|
- Mexico annotated bar chart + Netherlands dual-axis line 
-|
-|
- Q3 
-|
- Slope chart (pre/post DtS) + grouped bar chart 
-|
+| Section | Charts |
+|----------|--------|
+| Q1 | Choropleth map (syncs to scroll year) + annotated global trend line |
+| Q2 | Mexico annotated bar chart + Netherlands dual-axis line |
+| Q3 | Slope chart (pre/post DtS) + grouped bar chart |
 
 **Pros:** Cinematic, suits the DtS audience, guided story arc  
 **Cons:** Low audience agency, scroll triggers add D3 complexity
@@ -399,31 +217,11 @@ Generated 12 chart type candidates, then filtered, categorised, and combined the
 **Map type:** Bump chart (rank lines — a non-geographic spatial encoding)  
 **Structure:** Three stacked panels, all visible simultaneously. No tabs.
 
-|
- Panel 
-|
- Charts 
-|
-|
--------
-|
---------
-|
-|
- Q1 
-|
- Bump chart — 14 country rank lines 2015→2025 
-|
-|
- Q2 
-|
- Interest trend line + dual-axis driver position + stat cards (updates on click) 
-|
-|
- Q3 
-|
- US annotated line + slope chart (persistent, always visible) 
-|
+| Panel | Charts |
+|--------|--------|
+| Q1 | Bump chart — 14 country rank lines (2015–2025) |
+| Q2 | Interest trend line + dual-axis driver position + stat cards |
+| Q3 | US annotated line + slope chart |
 
 Clicking any country line updates the Q2 panel. Teal = non-traditional markets, slate = traditional.
 
@@ -438,31 +236,11 @@ Clicking any country line updates the Q2 panel. Teal = non-traditional markets, 
 **Map type:** Symbol/proportional dot map (circle area encodes magnitude — no colour-blind issues)  
 **Structure:** Persistent event timeline banner at top. All three question regions always visible. No tabs.
 
-|
- Region 
-|
- Charts 
-|
-|
---------
-|
---------
-|
-|
- Q1 
-|
- Symbol map (circle size = avg_interest, animated by year slider) + annotated global trend line 
-|
-|
- Q2 
-|
- Small multiples (NL, MX, GB, ES) + scatter plot with OLS 
-|
-|
- Q3 
-|
- Slope chart (pre/post DtS) + peak month heatmap 
-|
+| Region | Charts |
+|---------|--------|
+| Q1 | Symbol map + annotated global trend line |
+| Q2 | Small multiples (NL, MX, GB, ES) + scatter plot with OLS |
+| Q3 | Slope chart + peak month heatmap |
 
 Clicking a country circle highlights it across all panels simultaneously.
 
@@ -475,31 +253,11 @@ Clicking a country circle highlights it across all panels simultaneously.
 
 The final design is a **hybrid** combining the best elements of all three:
 
-|
- Source 
-|
- What was taken 
-|
-|
---------
-|
----------------
-|
-|
- Sheet 2 (Design A) 
-|
- Choropleth map with blue→amber scale; narrative chapter text framing 
-|
-|
- Sheet 3 (Design B) 
-|
- Bump chart as secondary entry point; country drill-down panel; three-panel bottom row 
-|
-|
- Sheet 4 (Design C) 
-|
- Persistent event timeline banner; slope chart; scatter plot; peak month heatmap 
-|
+| Source | What Was Taken |
+|---------|----------------|
+| Design A | Choropleth map with blue→amber scale and narrative framing |
+| Design B | Bump chart, country drill-down panel, and linked views |
+| Design C | Persistent event timeline, slope chart, scatter plot, and heatmap |
 
 **Key design decisions:**
 - Both the choropleth and the bump chart can select a country — both update the same country story panel (linked views)
@@ -513,124 +271,28 @@ The final design is a **hybrid** combining the best elements of all three:
 
 ### Charts implemented
 
-|
- Chart 
-|
- Answers 
-|
- Description 
-|
-|
--------
-|
----------
-|
--------------
-|
-|
- Choropleth world map 
-|
- Q1 
-|
- Blue→amber scale, year slider animates 2015→2025, click to select country 
-|
-|
- Bump chart 
-|
- Q1 
-|
- 14 country rank lines, teal = non-traditional, slate = traditional 
-|
-|
- Country interest line 
-|
- Q1/Q2 
-|
- Annotated trend with DtS era band and event reference lines 
-|
-|
- Driver position chart 
-|
- Q2 
-|
- Mini line chart below interest line (amber, P1=top) 
-|
-|
- Small multiples 
-|
- Q2 
-|
- 4-country panel: MX, NL, GB, ES — same x-axis, independent y-axes 
-|
-|
- Scatter plot + OLS 
-|
- Q2 
-|
- All focus-country observations, trend line with R²=0.40 annotation 
-|
-|
- Slope chart 
-|
- Q3 
-|
- Pre-DtS (2015–18) vs DtS era (2019–25) averages, teal up / coral down 
-|
-|
- Peak month heatmap 
-|
- Q3 
-|
- Country × year cells coloured by month of peak interest 
-|
+| Chart | Research Question | Description |
+|---------|-----------------|-------------|
+| Choropleth world map | Q1 | Blue→amber scale, animated year slider, click-to-select country |
+| Bump chart | Q1 | 14 country rank lines, traditional vs non-traditional markets |
+| Country interest line | Q1/Q2 | Annotated trend with DtS era band and event markers |
+| Driver position chart | Q2 | Mini line chart below interest line |
+| Small multiples | Q2 | Four-country comparison panel |
+| Scatter plot + OLS | Q2 | Correlation between interest and driver performance |
+| Slope chart | Q3 | Pre-DtS vs DtS-era averages |
+| Peak month heatmap | Q3 | Country × year peak-interest month |
 
 ### Key interactions
 
-|
- Interaction 
-|
- What it does 
-|
-|
--------------
-|
--------------
-|
-|
- Click country on choropleth 
-|
- Selects country, updates bump chart highlight and country story panel 
-|
-|
- Click country line on bump chart 
-|
- Same as above — two entry points, one coherent response 
-|
-|
- Year slider 
-|
- Redraws choropleth for selected year with smooth D3 transition 
-|
-|
- Event timeline pill click 
-|
- Sets slider to that year, redraws choropleth 
-|
-|
- Hover any data point 
-|
- Shows tooltip with year, value, country, and contextual info 
-|
-|
- Hover slope chart dots 
-|
- Shows pre-DtS value, DtS-era value, and absolute change 
-|
-|
- Hover heatmap cells 
-|
- Shows country, year, and peak month name 
-|
+| Interaction | Effect |
+|-------------|--------|
+| Click country on choropleth | Updates bump chart and country story panel |
+| Click country on bump chart | Same linked-view behaviour |
+| Year slider | Updates choropleth for selected year |
+| Event timeline click | Jumps slider to event year |
+| Hover data point | Shows contextual tooltip |
+| Hover slope chart | Displays pre/post DtS values |
+| Hover heatmap cell | Shows country, year, and peak month |
 
 ### Technical notes
 
@@ -698,51 +360,15 @@ f1-fandom-growth-visualisation/
 
 ## Technologies used
 
-|
- Purpose 
-|
- Tool 
-|
-|
----------
-|
-------
-|
-|
- Interactive visualisation 
-|
- D3.js v7 
-|
-|
- World map topology 
-|
- TopoJSON v3 (world-atlas@2) 
-|
-|
- Data wrangling 
-|
- Python — pandas, numpy, scipy 
-|
-|
- Google Trends data collection 
-|
- pytrends 
-|
-|
- Race data 
-|
- FastF1 Python API 
-|
-|
- Exploratory visualisation 
-|
- Tableau Desktop 2026.1 
-|
-|
- Hosting 
-|
- GitHub Pages 
-|
+| Purpose | Tool |
+|----------|------|
+| Interactive visualisation | D3.js v7 |
+| World map topology | TopoJSON v3 (world-atlas@2) |
+| Data wrangling | Python (pandas, numpy, scipy) |
+| Google Trends collection | pytrends |
+| Race data | FastF1 API |
+| Exploratory analysis | Tableau Desktop 2026.1 |
+| Hosting | GitHub Pages |
 
 ---
 
