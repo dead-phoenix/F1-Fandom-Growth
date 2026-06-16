@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Global Growth of Formula 1 Fandom</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<style>
+/* Reset & Base  */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --dark:    #0d0d0d;
+  --mid:     #1a1a2e;
+  --panel:   #16213e;
+  --card:    #0f1729;
+  --teal:    #048A81;
+  --teal-lt: #06c9bc;
+  --amber:   #F4A261;
+  --coral:   #E05C5C;
+  --slate:   #4A90A4;
+  --white:   #ffffff;
+  --offwhite:#e8e8e8;
+  --muted:   #9a9ab0;
+  --border:  #2a2a4a;
+  --q1:      #378add;
+  --q2:      #048A81;
+  --q3:      #F4A261;
+}
+
+body {
+  background: var(--dark);
+  color: var(--offwhite);
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Layout*/
+#app { max-width: 1400px; margin: 0 auto; padding: 0 20px 40px; }
+
+/*Header*/
+#header {
+  background: var(--mid);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 20px;
+  position: sticky; top: 0; z-index: 100;
+}
+#header-top { display: flex; align-items: baseline; gap: 16px; margin-bottom: 10px; }
+#header h1 { font-size: 20px; font-weight: 700; color: var(--white); letter-spacing: -0.3px; }
+#header-sub { font-size: 12px; color: var(--muted); }
+
+/* Event timeline banner */
+#event-timeline {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+#event-timeline .tl-label { font-size: 11px; color: var(--muted); white-space: nowrap; }
+.event-pill {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 500;
+  cursor: pointer; border: 1px solid transparent;
+  transition: all 0.2s;
+}
+.event-pill.dts  { background: rgba(244,162,97,0.15); color: var(--amber); border-color: rgba(244,162,97,0.3); }
+.event-pill.movie { background: rgba(55,138,221,0.15); color: var(--q1); border-color: rgba(55,138,221,0.3); }
+.event-pill.race  { background: rgba(224,92,92,0.15); color: var(--coral); border-color: rgba(224,92,92,0.3); }
+.event-pill.active { opacity: 1; transform: scale(1.04); }
+.event-pill:not(.active) { opacity: 0.65; }
+.event-pill:hover { opacity: 1; }
+
+/* Intro banner*/
+#intro {
+  background: linear-gradient(135deg, #0d1b2a 0%, #1a1a3e 100%);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin: 24px 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+#intro-text { grid-column: 1 / 3; }
+#intro h2 { font-size: 26px; color: var(--white); margin-bottom: 8px; }
+#intro p { color: var(--muted); font-size: 13px; line-height: 1.6; max-width: 540px; }
+.intro-stats { display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+.stat-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 14px;
+}
+.stat-num { font-size: 22px; font-weight: 700; color: var(--teal); }
+.stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+/* Section labels */
+.section-q {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 600;
+  padding: 4px 12px; border-radius: 20px; margin-bottom: 10px;
+}
+.q1-tag { background: rgba(55,138,221,0.15); color: var(--q1); }
+.q2-tag { background: rgba(4,138,129,0.15); color: var(--q2); }
+.q3-tag { background: rgba(244,162,97,0.15); color: var(--q3); }
+
+.section-title { font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+.section-desc { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+
+/*Grid layouts*/
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.main-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 16px; align-items: start; }
+
+/*Cards*/
+.card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px;
+}
+.card h3 { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+.card-sub { font-size: 11px; color: var(--muted); margin-bottom: 12px; }
+
+/*SVG charts base*/
+svg { overflow: visible; }
+.axis text { fill: var(--muted); font-size: 10px; }
+.axis path, .axis line { stroke: var(--border); }
+.grid line { stroke: var(--border); stroke-opacity: 0.5; stroke-dasharray: 3,3; }
+.grid path { stroke: none; }
+
+/*Choropleth*/
+#map-container { position: relative; }
+.country-path {
+  stroke: #222244; stroke-width: 0.5;
+  cursor: pointer; transition: opacity 0.2s;
+}
+.country-path:hover { stroke: var(--white); stroke-width: 1.5; opacity: 1 !important; }
+.country-path.selected { stroke: var(--white); stroke-width: 2; }
+
+/* Year slider */
+#year-slider-wrap {
+  display: flex; align-items: center; gap: 10px; margin-top: 10px;
+}
+#year-slider-wrap label { font-size: 11px; color: var(--muted); white-space: nowrap; }
+#year-slider {
+  flex: 1; appearance: none; height: 4px;
+  background: var(--border); border-radius: 2px; outline: none; cursor: pointer;
+}
+#year-slider::-webkit-slider-thumb {
+  appearance: none; width: 14px; height: 14px;
+  border-radius: 50%; background: var(--teal); cursor: pointer;
+}
+#year-display { font-size: 13px; font-weight: 700; color: var(--teal); min-width: 36px; }
+
+/*Country panel*/
+#country-panel { min-height: 300px; }
+#country-name { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 3px; }
+#country-subtitle { font-size: 11px; color: var(--muted); margin-bottom: 12px; }
+.kpi-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+.kpi { background: var(--panel); border-radius: 6px; padding: 8px 10px; text-align: center; }
+.kpi-val { font-size: 18px; font-weight: 700; color: var(--teal); }
+.kpi-lbl { font-size: 10px; color: var(--muted); }
+.kpi-val.coral { color: var(--coral); }
+.kpi-val.amber { color: var(--amber); }
+
+/*Tooltip*/
+#tooltip {
+  position: fixed; pointer-events: none;
+  background: rgba(15,23,41,0.95); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 14px; font-size: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  max-width: 220px; z-index: 1000;
+  opacity: 0; transition: opacity 0.15s;
+}
+#tooltip strong { color: var(--white); font-size: 13px; display: block; margin-bottom: 4px; }
+#tooltip .tt-row { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); }
+#tooltip .tt-val { color: var(--offwhite); font-weight: 500; }
+
+/*Onboarding tooltip*/
+#onboarding {
+  position: absolute; top: 30%; left: 50%; transform: translateX(-50%);
+  background: var(--white); color: #111; border-radius: 8px;
+  padding: 10px 16px; font-size: 12px; font-weight: 500;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4); white-space: nowrap;
+  z-index: 50; pointer-events: none;
+}
+#onboarding::after {
+  content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
+  border: 5px solid transparent; border-top-color: var(--white);
+}
+
+/*Legend */
+.legend { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); margin-top: 8px; }
+.legend-grad { height: 8px; border-radius: 4px; flex: 1; max-width: 160px; }
+
+/*Bump chart lines*/
+.bump-line { fill: none; stroke-width: 2; opacity: 0.4; cursor: pointer; transition: all 0.2s; }
+.bump-line.highlighted { stroke-width: 3; opacity: 1; }
+.bump-line.dimmed { opacity: 0.08; }
+.bump-label { font-size: 10px; fill: var(--muted); cursor: pointer; }
+.bump-label.highlighted { fill: var(--white); font-weight: 600; }
+
+/*Slope chart */
+.slope-line { fill: none; stroke-width: 2; opacity: 0.8; }
+.slope-dot { opacity: 0.9; }
+
+/*Peak month heatmap */
+.heatmap-cell { rx: 3; cursor: pointer; }
+.heatmap-label { font-size: 9px; fill: var(--muted); }
+
+/*Reference lines */
+.ref-line { stroke: var(--amber); stroke-width: 1; stroke-dasharray: 4,3; opacity: 0.7; }
+.ref-label { font-size: 9px; fill: var(--amber); }
+
+/*Scatter */
+.scatter-dot { stroke: var(--dark); stroke-width: 1; cursor: pointer; opacity: 0.8; }
+.scatter-dot:hover { opacity: 1; stroke: var(--white); }
+.trend-line { fill: none; stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 5,3; opacity: 0.7; }
+
+/*Section dividers */
+.section-wrap { margin-bottom: 28px; }
+.section-wrap + .section-wrap { padding-top: 28px; border-top: 1px solid var(--border); }
+
+/*Event focus highlighting */
+.country-path.event-focus { stroke: var(--white) !important; stroke-width: 3 !important; opacity: 1 !important; }
+.bump-line.event-focus { opacity: 1 !important; stroke-width: 3 !important; }
+.bump-label.event-focus { fill: var(--amber) !important; font-weight: 700; }
+
+/*Data source footer */
+#footer {
+  border-top: 1px solid var(--border); margin-top: 32px; padding-top: 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 11px; color: var(--muted);
+}
+#footer a { color: var(--teal); text-decoration: none; }
+#footer a:hover { text-decoration: underline; }
+
+/*Annotation boxes */
+.annotation-box {
+  background: rgba(244,162,97,0.1); border: 1px solid rgba(244,162,97,0.3);
+  border-radius: 6px; padding: 6px 10px;
+  font-size: 11px; color: var(--amber);
+}
+
+/*Global trend area */
+.dts-band { fill: rgba(4,138,129,0.08); }
+.area-path { fill: url(#tealGrad); opacity: 0.3; }
+.line-path { fill: none; stroke: var(--teal); stroke-width: 2.5; }
+</style>
+</head>
+<body>
+
+<div id="header">
+  <div id="header-top">
+    <h1>The Global Growth of Formula 1 Fandom</h1>
+    <span id="header-sub">Google Trends search interest · 14 countries · 2015–2025</span>
+  </div>
+  <div id="event-timeline">
+    <span class="tl-label">Key events →</span>
+  </div>
+</div>
+
+<div id="app">
+
+  <!-- Intro -->
+  <div id="intro">
+    <div id="intro-text">
+      <h2>How the world fell in love with F1</h2>
+      <p>Formula 1's global fanbase transformed dramatically between 2015 and 2025. This visualisation explores <em>how much</em> interest grew, <em>which countries</em> drove that growth, and <em>whether Drive to Survive</em> or on-track success explains it best. Click a country on the map to explore its story.</p>
+    </div>
+    <div class="intro-stats">
+      <div class="stat-card"><div class="stat-num">+94%</div><div class="stat-label">Global interest growth 2015→2022</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--amber)">2025</div><div class="stat-label">First year non-traditional markets overtook traditional</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--coral)">+211%</div><div class="stat-label">Mexico's interest surge when Pérez joined Red Bull (2021)</div></div>
+    </div>
+  </div>
+
+  <!-- ═══════ Q1: Global Growth ═══════ -->
+  <div class="section-wrap">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+      <div style="width:32px;height:32px;border-radius:50%;background:rgba(55,138,221,0.2);border:1.5px solid var(--q1);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--q1);flex-shrink:0">1</div>
+      <div>
+        <div class="section-title" style="color:var(--q1)">A sport goes global</div>
+        <div class="section-desc" style="margin-bottom:0">Between 2015 and 2025, Formula 1's digital audience nearly doubled — but the growth was far from uniform. Click a country to explore its story. Drag the year slider. Click an event pill to highlight that moment.</div>
+      </div>
+    </div>
+
+    <div class="main-layout">
+      <!-- Map -->
+      <div class="card" id="map-container">
+        <h3>Search interest by country</h3>
+        <p class="card-sub">Colour encodes average annual interest (blue = low, amber = high)</p>
+        <div id="onboarding">👆 Click a country to explore its story</div>
+        <svg id="map-svg"></svg>
+        <div id="year-slider-wrap">
+          <label>Year:</label>
+          <input type="range" id="year-slider" min="2015" max="2025" value="2022" step="1">
+          <span id="year-display">2022</span>
+        </div>
+        <div class="legend">
+          <span>Low</span>
+          <div class="legend-grad" id="map-legend-grad"></div>
+          <span>High</span>
+        </div>
+      </div>
+
+      <!-- Country panel -->
+      <div class="card" id="country-panel">
+        <div id="country-name">Select a country</div>
+        <div id="country-subtitle">Click any country on the map or bump chart</div>
+        <div class="kpi-row" id="kpi-row" style="display:none">
+          <div class="kpi"><div class="kpi-val" id="kpi-peak">—</div><div class="kpi-lbl">Peak interest</div></div>
+          <div class="kpi"><div class="kpi-val amber" id="kpi-year">—</div><div class="kpi-lbl">Peak year</div></div>
+          <div class="kpi"><div class="kpi-val" id="kpi-growth">—</div><div class="kpi-lbl">Growth 2015→peak</div></div>
+        </div>
+        <svg id="country-line-svg"></svg>
+        <div id="driver-info" style="margin-top:10px; display:none">
+          <div style="font-size:11px; color:var(--muted); margin-bottom:6px; font-weight:600">TOP DRIVER</div>
+          <svg id="driver-bar-svg"></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bump chart -->
+    <div class="card" style="margin-top:16px">
+      <h3>Country rank by search interest 2015–2025</h3>
+      <p class="card-sub">Rank 1 = highest interest · hover to highlight · click to select country · teal = non-traditional markets · slate = traditional markets</p>
+      <svg id="bump-svg"></svg>
+    </div>
+  </div>
+
+  <!-- Waterfall connector 1→2 -->
+  <div style="display:flex;justify-content:center;align-items:center;padding:4px 0;color:#2a2a4a;font-size:20px;user-select:none">↓</div>
+
+  <!-- ═══════ Chapter 2: Driver Effect ═══════ -->
+  <div class="section-wrap">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+      <div style="width:32px;height:32px;border-radius:50%;background:rgba(4,138,129,0.2);border:1.5px solid var(--q2);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--q2);flex-shrink:0">2</div>
+      <div>
+        <div class="section-title" style="color:var(--q2)">When your driver wins, your country watches</div>
+        <div class="section-desc" style="margin-bottom:0">Mexico's interest exploded +211% the year Pérez joined Red Bull. The Netherlands fell even as Verstappen dominated. The relationship between driver success and national interest is real — but complicated. Hover dots for details.</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <h3>Driver position vs country interest</h3>
+        <p class="card-sub">Each dot = one country-year · lower position = better result · trend line shows overall relationship</p>
+        <svg id="scatter-svg"></svg>
+        <div class="annotation-box" style="margin-top:10px">R² = 0.40 · p = 0.051 · position explains ~40% of cross-country variance</div>
+      </div>
+      <div class="card">
+        <h3>Small multiples: interest vs driver position</h3>
+        <p class="card-sub">Blue = avg interest (left axis) · orange = driver position inverted so P1 = top (right axis)</p>
+        <svg id="small-multiples-svg"></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Waterfall connector 2→3 -->
+  <div style="display:flex;justify-content:center;align-items:center;padding:4px 0;color:#2a2a4a;font-size:20px;user-select:none">↓</div>
+
+  <!-- ═══════ Chapter 3: Media Effect ═══════ -->
+  <div class="section-wrap">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+      <div style="width:32px;height:32px;border-radius:50%;background:rgba(244,162,97,0.2);border:1.5px solid var(--q3);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--q3);flex-shrink:0">3</div>
+      <div>
+        <div class="section-title" style="color:var(--q3)">Netflix changed everything — or did it?</div>
+        <div class="section-desc" style="margin-bottom:0">The US grew +134.8% with no competitive driver and no home race until 2022. That growth has to be media-driven. But the peak month heatmap reveals something subtler — race calendar timing still dominates for host nations. Drive to Survive shifted <em>when</em> people search, not just <em>how many</em>.</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <h3>Pre vs post Drive to Survive — all countries</h3>
+        <p class="card-sub">Teal = increase · coral = decrease · dots show pre-DtS average (left) and DtS-era average (right)</p>
+        <svg id="slope-svg"></svg>
+      </div>
+      <div class="card">
+        <h3>Peak interest month by country and year</h3>
+        <p class="card-sub">Month when search interest peaked each year · blue = March (season opener / DtS release) · orange = Oct/Nov (championship climax)</p>
+        <svg id="heatmap-svg"></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+    <div>Data: <a href="https://trends.google.com" target="_blank">Google Trends</a> · <a href="https://github.com/theOehrly/FastF1" target="_blank">FastF1 API</a> · 2015–2025</div>
+    <div>Tanisha Thapa · 35909684 · FIT5147 Data Exploration & Visualisation · Monash University S1 2026</div>
+  </div>
+</div>
+
+<div id="tooltip">
+  <strong id="tt-title"></strong>
+  <div id="tt-body"></div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

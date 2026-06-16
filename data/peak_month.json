@@ -1,0 +1,1080 @@
+[
+  {
+    "country_code": "AU",
+    "country": "Australia",
+    "year": 2015,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "AU",
+    "country": "Australia",
+    "year": 2016,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "AU",
+    "country": "Australia",
+    "year": 2017,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "AU",
+    "country": "Australia",
+    "year": 2018,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "AU",
+    "country": "Australia",
+    "year": 2019,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "AU",
+    "country": "Australia",
+    "year": 2020,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "AU",
+    "country": "Australia",
+    "year": 2021,
+    "peak_month": 12,
+    "peak_month_name": "Dec"
+  },
+  {
+    "country_code": "AU",
+    "country": "Australia",
+    "year": 2022,
+    "peak_month": 4,
+    "peak_month_name": "Apr"
+  },
+  {
+    "country_code": "AU",
+    "country": "Australia",
+    "year": 2023,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "AU",
+    "country": "Australia",
+    "year": 2024,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "AU",
+    "country": "Australia",
+    "year": 2025,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "BR",
+    "country": "Brazil",
+    "year": 2015,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "BR",
+    "country": "Brazil",
+    "year": 2016,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "BR",
+    "country": "Brazil",
+    "year": 2017,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "BR",
+    "country": "Brazil",
+    "year": 2018,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "BR",
+    "country": "Brazil",
+    "year": 2019,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "BR",
+    "country": "Brazil",
+    "year": 2020,
+    "peak_month": 12,
+    "peak_month_name": "Dec"
+  },
+  {
+    "country_code": "BR",
+    "country": "Brazil",
+    "year": 2021,
+    "peak_month": 12,
+    "peak_month_name": "Dec"
+  },
+  {
+    "country_code": "BR",
+    "country": "Brazil",
+    "year": 2022,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "BR",
+    "country": "Brazil",
+    "year": 2023,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "BR",
+    "country": "Brazil",
+    "year": 2024,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "BR",
+    "country": "Brazil",
+    "year": 2025,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "CN",
+    "country": "China",
+    "year": 2015,
+    "peak_month": 1,
+    "peak_month_name": "Jan"
+  },
+  {
+    "country_code": "CN",
+    "country": "China",
+    "year": 2016,
+    "peak_month": 2,
+    "peak_month_name": "Feb"
+  },
+  {
+    "country_code": "CN",
+    "country": "China",
+    "year": 2017,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "CN",
+    "country": "China",
+    "year": 2018,
+    "peak_month": 4,
+    "peak_month_name": "Apr"
+  },
+  {
+    "country_code": "CN",
+    "country": "China",
+    "year": 2019,
+    "peak_month": 4,
+    "peak_month_name": "Apr"
+  },
+  {
+    "country_code": "CN",
+    "country": "China",
+    "year": 2020,
+    "peak_month": 1,
+    "peak_month_name": "Jan"
+  },
+  {
+    "country_code": "CN",
+    "country": "China",
+    "year": 2021,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "CN",
+    "country": "China",
+    "year": 2022,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "CN",
+    "country": "China",
+    "year": 2023,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "CN",
+    "country": "China",
+    "year": 2024,
+    "peak_month": 9,
+    "peak_month_name": "Sep"
+  },
+  {
+    "country_code": "CN",
+    "country": "China",
+    "year": 2025,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "DE",
+    "country": "Germany",
+    "year": 2015,
+    "peak_month": 9,
+    "peak_month_name": "Sep"
+  },
+  {
+    "country_code": "DE",
+    "country": "Germany",
+    "year": 2016,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "DE",
+    "country": "Germany",
+    "year": 2017,
+    "peak_month": 7,
+    "peak_month_name": "Jul"
+  },
+  {
+    "country_code": "DE",
+    "country": "Germany",
+    "year": 2018,
+    "peak_month": 4,
+    "peak_month_name": "Apr"
+  },
+  {
+    "country_code": "DE",
+    "country": "Germany",
+    "year": 2019,
+    "peak_month": 7,
+    "peak_month_name": "Jul"
+  },
+  {
+    "country_code": "DE",
+    "country": "Germany",
+    "year": 2020,
+    "peak_month": 7,
+    "peak_month_name": "Jul"
+  },
+  {
+    "country_code": "DE",
+    "country": "Germany",
+    "year": 2021,
+    "peak_month": 12,
+    "peak_month_name": "Dec"
+  },
+  {
+    "country_code": "DE",
+    "country": "Germany",
+    "year": 2022,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "DE",
+    "country": "Germany",
+    "year": 2023,
+    "peak_month": 2,
+    "peak_month_name": "Feb"
+  },
+  {
+    "country_code": "DE",
+    "country": "Germany",
+    "year": 2024,
+    "peak_month": 2,
+    "peak_month_name": "Feb"
+  },
+  {
+    "country_code": "DE",
+    "country": "Germany",
+    "year": 2025,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "IN",
+    "country": "India",
+    "year": 2015,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "IN",
+    "country": "India",
+    "year": 2016,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "IN",
+    "country": "India",
+    "year": 2017,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "IN",
+    "country": "India",
+    "year": 2018,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "IN",
+    "country": "India",
+    "year": 2019,
+    "peak_month": 9,
+    "peak_month_name": "Sep"
+  },
+  {
+    "country_code": "IN",
+    "country": "India",
+    "year": 2020,
+    "peak_month": 12,
+    "peak_month_name": "Dec"
+  },
+  {
+    "country_code": "IN",
+    "country": "India",
+    "year": 2021,
+    "peak_month": 12,
+    "peak_month_name": "Dec"
+  },
+  {
+    "country_code": "IN",
+    "country": "India",
+    "year": 2022,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "IN",
+    "country": "India",
+    "year": 2023,
+    "peak_month": 2,
+    "peak_month_name": "Feb"
+  },
+  {
+    "country_code": "IN",
+    "country": "India",
+    "year": 2024,
+    "peak_month": 2,
+    "peak_month_name": "Feb"
+  },
+  {
+    "country_code": "IN",
+    "country": "India",
+    "year": 2025,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "IT",
+    "country": "Italy",
+    "year": 2015,
+    "peak_month": 4,
+    "peak_month_name": "Apr"
+  },
+  {
+    "country_code": "IT",
+    "country": "Italy",
+    "year": 2016,
+    "peak_month": 6,
+    "peak_month_name": "Jun"
+  },
+  {
+    "country_code": "IT",
+    "country": "Italy",
+    "year": 2017,
+    "peak_month": 4,
+    "peak_month_name": "Apr"
+  },
+  {
+    "country_code": "IT",
+    "country": "Italy",
+    "year": 2018,
+    "peak_month": 4,
+    "peak_month_name": "Apr"
+  },
+  {
+    "country_code": "IT",
+    "country": "Italy",
+    "year": 2019,
+    "peak_month": 9,
+    "peak_month_name": "Sep"
+  },
+  {
+    "country_code": "IT",
+    "country": "Italy",
+    "year": 2020,
+    "peak_month": 7,
+    "peak_month_name": "Jul"
+  },
+  {
+    "country_code": "IT",
+    "country": "Italy",
+    "year": 2021,
+    "peak_month": 12,
+    "peak_month_name": "Dec"
+  },
+  {
+    "country_code": "IT",
+    "country": "Italy",
+    "year": 2022,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "IT",
+    "country": "Italy",
+    "year": 2023,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "IT",
+    "country": "Italy",
+    "year": 2024,
+    "peak_month": 5,
+    "peak_month_name": "May"
+  },
+  {
+    "country_code": "IT",
+    "country": "Italy",
+    "year": 2025,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "JP",
+    "country": "Japan",
+    "year": 2015,
+    "peak_month": 9,
+    "peak_month_name": "Sep"
+  },
+  {
+    "country_code": "JP",
+    "country": "Japan",
+    "year": 2016,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "JP",
+    "country": "Japan",
+    "year": 2017,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "JP",
+    "country": "Japan",
+    "year": 2018,
+    "peak_month": 9,
+    "peak_month_name": "Sep"
+  },
+  {
+    "country_code": "JP",
+    "country": "Japan",
+    "year": 2019,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "JP",
+    "country": "Japan",
+    "year": 2020,
+    "peak_month": 7,
+    "peak_month_name": "Jul"
+  },
+  {
+    "country_code": "JP",
+    "country": "Japan",
+    "year": 2021,
+    "peak_month": 12,
+    "peak_month_name": "Dec"
+  },
+  {
+    "country_code": "JP",
+    "country": "Japan",
+    "year": 2022,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "JP",
+    "country": "Japan",
+    "year": 2023,
+    "peak_month": 9,
+    "peak_month_name": "Sep"
+  },
+  {
+    "country_code": "JP",
+    "country": "Japan",
+    "year": 2024,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "JP",
+    "country": "Japan",
+    "year": 2025,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "MX",
+    "country": "Mexico",
+    "year": 2015,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "MX",
+    "country": "Mexico",
+    "year": 2016,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "MX",
+    "country": "Mexico",
+    "year": 2017,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "MX",
+    "country": "Mexico",
+    "year": 2018,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "MX",
+    "country": "Mexico",
+    "year": 2019,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "MX",
+    "country": "Mexico",
+    "year": 2020,
+    "peak_month": 12,
+    "peak_month_name": "Dec"
+  },
+  {
+    "country_code": "MX",
+    "country": "Mexico",
+    "year": 2021,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "MX",
+    "country": "Mexico",
+    "year": 2022,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "MX",
+    "country": "Mexico",
+    "year": 2023,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "MX",
+    "country": "Mexico",
+    "year": 2024,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "MX",
+    "country": "Mexico",
+    "year": 2025,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "NL",
+    "country": "Netherlands",
+    "year": 2015,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "NL",
+    "country": "Netherlands",
+    "year": 2016,
+    "peak_month": 5,
+    "peak_month_name": "May"
+  },
+  {
+    "country_code": "NL",
+    "country": "Netherlands",
+    "year": 2017,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "NL",
+    "country": "Netherlands",
+    "year": 2018,
+    "peak_month": 7,
+    "peak_month_name": "Jul"
+  },
+  {
+    "country_code": "NL",
+    "country": "Netherlands",
+    "year": 2019,
+    "peak_month": 7,
+    "peak_month_name": "Jul"
+  },
+  {
+    "country_code": "NL",
+    "country": "Netherlands",
+    "year": 2020,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "NL",
+    "country": "Netherlands",
+    "year": 2021,
+    "peak_month": 12,
+    "peak_month_name": "Dec"
+  },
+  {
+    "country_code": "NL",
+    "country": "Netherlands",
+    "year": 2022,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "NL",
+    "country": "Netherlands",
+    "year": 2023,
+    "peak_month": 2,
+    "peak_month_name": "Feb"
+  },
+  {
+    "country_code": "NL",
+    "country": "Netherlands",
+    "year": 2024,
+    "peak_month": 2,
+    "peak_month_name": "Feb"
+  },
+  {
+    "country_code": "NL",
+    "country": "Netherlands",
+    "year": 2025,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "year": 2015,
+    "peak_month": 9,
+    "peak_month_name": "Sep"
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "year": 2016,
+    "peak_month": 9,
+    "peak_month_name": "Sep"
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "year": 2017,
+    "peak_month": 9,
+    "peak_month_name": "Sep"
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "year": 2018,
+    "peak_month": 9,
+    "peak_month_name": "Sep"
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "year": 2019,
+    "peak_month": 9,
+    "peak_month_name": "Sep"
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "year": 2020,
+    "peak_month": 7,
+    "peak_month_name": "Jul"
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "year": 2021,
+    "peak_month": 12,
+    "peak_month_name": "Dec"
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "year": 2022,
+    "peak_month": 9,
+    "peak_month_name": "Sep"
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "year": 2023,
+    "peak_month": 9,
+    "peak_month_name": "Sep"
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "year": 2024,
+    "peak_month": 9,
+    "peak_month_name": "Sep"
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "year": 2025,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "ES",
+    "country": "Spain",
+    "year": 2015,
+    "peak_month": 4,
+    "peak_month_name": "Apr"
+  },
+  {
+    "country_code": "ES",
+    "country": "Spain",
+    "year": 2016,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "ES",
+    "country": "Spain",
+    "year": 2017,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "ES",
+    "country": "Spain",
+    "year": 2018,
+    "peak_month": 4,
+    "peak_month_name": "Apr"
+  },
+  {
+    "country_code": "ES",
+    "country": "Spain",
+    "year": 2019,
+    "peak_month": 7,
+    "peak_month_name": "Jul"
+  },
+  {
+    "country_code": "ES",
+    "country": "Spain",
+    "year": 2020,
+    "peak_month": 7,
+    "peak_month_name": "Jul"
+  },
+  {
+    "country_code": "ES",
+    "country": "Spain",
+    "year": 2021,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "ES",
+    "country": "Spain",
+    "year": 2022,
+    "peak_month": 7,
+    "peak_month_name": "Jul"
+  },
+  {
+    "country_code": "ES",
+    "country": "Spain",
+    "year": 2023,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "ES",
+    "country": "Spain",
+    "year": 2024,
+    "peak_month": 2,
+    "peak_month_name": "Feb"
+  },
+  {
+    "country_code": "ES",
+    "country": "Spain",
+    "year": 2025,
+    "peak_month": 5,
+    "peak_month_name": "May"
+  },
+  {
+    "country_code": "AE",
+    "country": "UAE",
+    "year": 2015,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "AE",
+    "country": "UAE",
+    "year": 2016,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "AE",
+    "country": "UAE",
+    "year": 2017,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "AE",
+    "country": "UAE",
+    "year": 2018,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "AE",
+    "country": "UAE",
+    "year": 2019,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "AE",
+    "country": "UAE",
+    "year": 2020,
+    "peak_month": 12,
+    "peak_month_name": "Dec"
+  },
+  {
+    "country_code": "AE",
+    "country": "UAE",
+    "year": 2021,
+    "peak_month": 12,
+    "peak_month_name": "Dec"
+  },
+  {
+    "country_code": "AE",
+    "country": "UAE",
+    "year": 2022,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "AE",
+    "country": "UAE",
+    "year": 2023,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "AE",
+    "country": "UAE",
+    "year": 2024,
+    "peak_month": 12,
+    "peak_month_name": "Dec"
+  },
+  {
+    "country_code": "AE",
+    "country": "UAE",
+    "year": 2025,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "GB",
+    "country": "United Kingdom",
+    "year": 2015,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "GB",
+    "country": "United Kingdom",
+    "year": 2016,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "GB",
+    "country": "United Kingdom",
+    "year": 2017,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "GB",
+    "country": "United Kingdom",
+    "year": 2018,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "GB",
+    "country": "United Kingdom",
+    "year": 2019,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "GB",
+    "country": "United Kingdom",
+    "year": 2020,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "GB",
+    "country": "United Kingdom",
+    "year": 2021,
+    "peak_month": 12,
+    "peak_month_name": "Dec"
+  },
+  {
+    "country_code": "GB",
+    "country": "United Kingdom",
+    "year": 2022,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "GB",
+    "country": "United Kingdom",
+    "year": 2023,
+    "peak_month": 2,
+    "peak_month_name": "Feb"
+  },
+  {
+    "country_code": "GB",
+    "country": "United Kingdom",
+    "year": 2024,
+    "peak_month": 2,
+    "peak_month_name": "Feb"
+  },
+  {
+    "country_code": "GB",
+    "country": "United Kingdom",
+    "year": 2025,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "year": 2015,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "year": 2016,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "year": 2017,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "year": 2018,
+    "peak_month": 10,
+    "peak_month_name": "Oct"
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "year": 2019,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "year": 2020,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "year": 2021,
+    "peak_month": 12,
+    "peak_month_name": "Dec"
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "year": 2022,
+    "peak_month": 3,
+    "peak_month_name": "Mar"
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "year": 2023,
+    "peak_month": 11,
+    "peak_month_name": "Nov"
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "year": 2024,
+    "peak_month": 2,
+    "peak_month_name": "Feb"
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "year": 2025,
+    "peak_month": 7,
+    "peak_month_name": "Jul"
+  }
+]

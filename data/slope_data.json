@@ -1,0 +1,114 @@
+[
+  {
+    "country_code": "AE",
+    "country": "UAE",
+    "avg_interest_pre": 16.91,
+    "avg_interest_post": 19.33,
+    "change": 2.42,
+    "direction": "increase"
+  },
+  {
+    "country_code": "AU",
+    "country": "Australia",
+    "avg_interest_pre": 25.21,
+    "avg_interest_post": 27.92,
+    "change": 2.71,
+    "direction": "increase"
+  },
+  {
+    "country_code": "BR",
+    "country": "Brazil",
+    "avg_interest_pre": 34.61,
+    "avg_interest_post": 56.59,
+    "change": 21.98,
+    "direction": "increase"
+  },
+  {
+    "country_code": "CN",
+    "country": "China",
+    "avg_interest_pre": 2.28,
+    "avg_interest_post": 3.93,
+    "change": 1.65,
+    "direction": "increase"
+  },
+  {
+    "country_code": "DE",
+    "country": "Germany",
+    "avg_interest_pre": 40.84,
+    "avg_interest_post": 53.15,
+    "change": 12.31,
+    "direction": "increase"
+  },
+  {
+    "country_code": "ES",
+    "country": "Spain",
+    "avg_interest_pre": 32.18,
+    "avg_interest_post": 31.54,
+    "change": -0.64,
+    "direction": "decrease"
+  },
+  {
+    "country_code": "GB",
+    "country": "United Kingdom",
+    "avg_interest_pre": 45.3,
+    "avg_interest_post": 49.61,
+    "change": 4.31,
+    "direction": "increase"
+  },
+  {
+    "country_code": "IN",
+    "country": "India",
+    "avg_interest_pre": 51.97,
+    "avg_interest_post": 93.87,
+    "change": 41.9,
+    "direction": "increase"
+  },
+  {
+    "country_code": "IT",
+    "country": "Italy",
+    "avg_interest_pre": 21.46,
+    "avg_interest_post": 30.09,
+    "change": 8.63,
+    "direction": "increase"
+  },
+  {
+    "country_code": "JP",
+    "country": "Japan",
+    "avg_interest_pre": 32.84,
+    "avg_interest_post": 50.22,
+    "change": 17.38,
+    "direction": "increase"
+  },
+  {
+    "country_code": "MX",
+    "country": "Mexico",
+    "avg_interest_pre": 12.44,
+    "avg_interest_post": 29.47,
+    "change": 17.03,
+    "direction": "increase"
+  },
+  {
+    "country_code": "NL",
+    "country": "Netherlands",
+    "avg_interest_pre": 18.3,
+    "avg_interest_post": 18.64,
+    "change": 0.34,
+    "direction": "increase"
+  },
+  {
+    "country_code": "SG",
+    "country": "Singapore",
+    "avg_interest_pre": 17.95,
+    "avg_interest_post": 19.75,
+    "change": 1.8,
+    "direction": "increase"
+  },
+  {
+    "country_code": "US",
+    "country": "United States",
+    "avg_interest_pre": 48.34,
+    "avg_interest_post": 86.04,
+    "change": 37.7,
+    "direction": "increase"
+  }
+]

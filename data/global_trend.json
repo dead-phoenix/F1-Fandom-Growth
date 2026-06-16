@@ -1,0 +1,57 @@
+[
+  {
+    "year": 2015,
+    "avg_interest": 27.34,
+    "had_media_release": false
+  },
+  {
+    "year": 2016,
+    "avg_interest": 28.41,
+    "had_media_release": false
+  },
+  {
+    "year": 2017,
+    "avg_interest": 28.56,
+    "had_media_release": false
+  },
+  {
+    "year": 2018,
+    "avg_interest": 30.15,
+    "had_media_release": false
+  },
+  {
+    "year": 2019,
+    "avg_interest": 32.85,
+    "had_media_release": true
+  },
+  {
+    "year": 2020,
+    "avg_interest": 28.79,
+    "had_media_release": true
+  },
+  {
+    "year": 2021,
+    "avg_interest": 46.06,
+    "had_media_release": true
+  },
+  {
+    "year": 2022,
+    "avg_interest": 53.16,
+    "had_media_release": true
+  },
+  {
+    "year": 2023,
+    "avg_interest": 47.83,
+    "had_media_release": true
+  },
+  {
+    "year": 2024,
+    "avg_interest": 45.08,
+    "had_media_release": true
+  },
+  {
+    "year": 2025,
+    "avg_interest": 31.31,
+    "had_media_release": true
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "year": 2015,
+    "Champion": "Lewis Hamilton",
+    "Champion_Nationality": "British",
+    "Champion_Nationality_ISO": "GB",
+    "Constructor": "Mercedes",
+    "Total_Points": 381.0
+  },
+  {
+    "year": 2016,
+    "Champion": "Nico Rosberg",
+    "Champion_Nationality": "German",
+    "Champion_Nationality_ISO": "DE",
+    "Constructor": "Mercedes",
+    "Total_Points": 385.0
+  },
+  {
+    "year": 2017,
+    "Champion": "Lewis Hamilton",
+    "Champion_Nationality": "British",
+    "Champion_Nationality_ISO": "GB",
+    "Constructor": "Mercedes",
+    "Total_Points": 363.0
+  },
+  {
+    "year": 2018,
+    "Champion": "Lewis Hamilton",
+    "Champion_Nationality": "British",
+    "Champion_Nationality_ISO": "GB",
+    "Constructor": "Mercedes",
+    "Total_Points": 408.0
+  },
+  {
+    "year": 2019,
+    "Champion": "Lewis Hamilton",
+    "Champion_Nationality": "British",
+    "Champion_Nationality_ISO": "GB",
+    "Constructor": "Mercedes",
+    "Total_Points": 413.0
+  },
+  {
+    "year": 2020,
+    "Champion": "Lewis Hamilton",
+    "Champion_Nationality": "British",
+    "Champion_Nationality_ISO": "GB",
+    "Constructor": "Mercedes",
+    "Total_Points": 347.0
+  },
+  {
+    "year": 2021,
+    "Champion": "Max Verstappen",
+    "Champion_Nationality": "Dutch",
+    "Champion_Nationality_ISO": "NL",
+    "Constructor": "Red Bull",
+    "Total_Points": 395.5
+  },
+  {
+    "year": 2022,
+    "Champion": "Max Verstappen",
+    "Champion_Nationality": "Dutch",
+    "Champion_Nationality_ISO": "NL",
+    "Constructor": "Red Bull",
+    "Total_Points": 454.0
+  },
+  {
+    "year": 2023,
+    "Champion": "Max Verstappen",
+    "Champion_Nationality": "Dutch",
+    "Champion_Nationality_ISO": "NL",
+    "Constructor": "Red Bull",
+    "Total_Points": 575.0
+  },
+  {
+    "year": 2024,
+    "Champion": "Max Verstappen",
+    "Champion_Nationality": "Dutch",
+    "Champion_Nationality_ISO": "NL",
+    "Constructor": "Red Bull",
+    "Total_Points": 437.0
+  },
+  {
+    "year": 2025,
+    "Champion": "Lando Norris",
+    "Champion_Nationality": "British",
+    "Champion_Nationality_ISO": "GB",
+    "Constructor": "McLaren",
+    "Total_Points": 423.0
+  }
+]
