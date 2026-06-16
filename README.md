@@ -7,7 +7,7 @@ An interactive narrative data visualisation exploring how global F1 fan engageme
 ---
 
 > **Academic context:** FIT5147 Data Exploration and Visualisation · Semester 1, 2026 · Monash University  
-> Tanisha Thapa · 35909684
+> Tanisha Thapa
 
 ---
 
